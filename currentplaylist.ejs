@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+
+<header>
+    <div class="logo">
+        <div class="circle"></div>
+        <h1>Yafri FM</h1>
+    </div>
+    <div class="role">DJ Role</div>
+    <button class="user-button"><%= user %></button>
+</header>
+
+        <div class="container">
+            <nav class="sidebar">
+                <button class="toggle-btn" onclick="toggleSidebar()">☰</button> 
+                <ul id="barcontent">
+                    <li><a href="/maindj"><button class="nav-btn">Main Menu</button></a></li>
+                    <li><a href="/timeslot"><button class="nav-btn">Select Timeslot</button></a></li>
+                    <li><a href="/searchsongs"><button class="nav-btn">Search Songs</button></a></li>
+                    <li><a href="/currentplaylist"><button class="nav-btnN">Current Playlist</button></a></li>
+                    <li><button class="nav-btn">Previous Playlists</button></li>
+                 </ul>
+            </nav>
+
+            <main>
+                <section class="CurrentPlaylist">
+                    <h2>Current Playlist</h2>
+                </section>
+                
+                <section class="Playlist2">
+                    <div class="title">Your Current Playlist: <%= playlist.name %></div>
+                    <div class="Playlistlist">
+                    <ol>
+                        <% playlist.songs.forEach(song => { %>
+                            <li><%= song %></li>
+                        <% }); %>
+                    </ol>
+                    </div>
+                </section>
+                
+                <section class="playlist-summary-and-search">
+                    <div class="playlist-summary">
+                        <div class="title">Playlist Summary</div>
+                        <p><strong>Genre:</strong> <%= playlist.genre %></p>
+                        <p><strong>Total Minutes:</strong> <%= playlist.totalMinutes %> mins</p>
+                        <p><strong>Total Listeners:</strong> <%= playlist.listeners %></p>
+                        <div class="playlist-image-section">
+                            <img src="/images/playlist.jpeg" alt="Playlist Image" class="playlist-image">
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-search-remove">
+                        <div class="title">Remove a Song:</div>
+                        <input type="text" id="search-remove" placeholder="Search a song..." maxlength="100" class="search-input">
+                        <button id="remove-song" class="remove-button">Remove Song</button>
+                        <div class="remove-image-section">
+                            <img src="/images/gasolina.jpeg" alt="Remove Image" class="remove-image">
+                        </div>
+                        
+                    </div>
+                </section>
+
+                <section class="CurrentSong">
+                    <div class="song-info">
+                        <div class="controls">
+                            <button>&lt;&lt;</button>
+                            <button id="play">||</button>
+                            <button>&gt;&gt;</button> 
+                        </div>
+                        <div class="SongTitle">
+                            <p><%= currentSong %></p>
+                        </div>
+                        
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress"></div> 
+                    </div>
+                </section>
+            </main>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+            </ul>
+        </footer>
+        <script src="/javascript/currentplaylist.js"></script>
+    </body>
+</html>

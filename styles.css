@@ -1,0 +1,600 @@
+* {
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Header Styles (Common for all screens) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.role {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.user-button {
+    background-color: #00cc66;
+    border: none;
+    padding: 0.5em 1em;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 10%;
+}
+
+/* Footer Styles (Common for all screens) */
+footer {
+    background-color: #717589;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Container (Common) */
+.container {
+    display: flex;
+    height: 80vh;
+}
+
+/* Sidebar (Common) */
+.sidebar {
+    width: 30%;
+    background-color: #27282a;
+    padding-top: 20px;
+    border-radius: 5px;
+    padding-top: 0px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 5px 20px;
+}
+
+.sidebar.collapsed  {
+    width: 30px;
+}
+.sidebar.collapsed #barcontent {
+    display: none;
+}
+
+
+
+/* Toggle button */
+.toggle-btn{
+   background-color: #27282a;
+   color: #fff;
+   font-size: medium;
+   border: none;
+}
+
+/* Nav Buttons */
+.nav-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Nav Button (Main One: different color) */
+.nav-btnN {
+    width: 100%;
+    padding: 15px;
+    background-color: #00cc66;
+    color: black;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Nav buttons Hover */
+.nav-btn:hover {
+    background-color: #00cc66;
+    color:black;
+}
+
+/* Main Content Area (Common)*/
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto auto; 
+    grid-gap: 5px; 
+    padding: 20px;
+    background-color: #647cfc;
+    border-radius: 5px;
+    padding-top: 5px;
+    width: 100%;
+}
+
+/* Titles STyles */
+.title{
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: medium;
+    width: fit-content;
+    height:fit-content;
+}
+
+
+/* Style for current song bar (Common) */
+.CurrentSong {
+    grid-column: 1 / span 2; 
+    background-color: #b7c2fb;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    width: auto;
+}
+
+
+.song-info {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px; 
+    font-family: 'Georgia', sans-serif;
+}
+
+.SongTitle{
+    font-style: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+}
+
+.controls button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 0.5em 1em;
+    color: #000;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.controls button:hover{
+    background-color: #4ae29b;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    height: 5px;
+    border-radius: 5px;
+    margin-top: 0.5em;
+}
+
+.progress {
+    background-color: #3e4a99;
+    height: 100%;
+    width:50%;
+}
+
+
+/* Main Screen Styles */
+
+/* Main Menu section spans both columns */
+.MainMenu {
+    grid-column: 1 ; 
+    background-color: #4ae29b;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: small;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 0px;
+}   
+
+/* DJ section in the first column */
+.DJ {
+    grid-column: 1; 
+    background-color:#b7c2fb; 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 0px;
+    height: 100%; 
+}
+
+.dj-image {
+    max-width: 75%;
+    max-height: 270px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+
+/* Playlist in the second column */
+.Playlist{
+    grid-column: 2;
+    background-color: #b7c2fb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top:0px;
+    width: auto;
+}
+
+
+.Playlistlist {
+    font-size: 1em; 
+    max-height: 270px;
+    overflow-y: auto;
+}
+
+.Playlistlist ol {
+    padding-left: 20px; 
+}
+
+/* Style for each list item */
+.Playlistlist li {
+    background-color: #e0e0e0; 
+    border-radius: 5px; 
+    padding: 10px; 
+    margin: 5px 0; 
+    transition: background-color 0.3s; 
+}
+
+/* Hover effect for list items */
+.Playlistlist li:hover {
+    background-color: #717589; 
+    color: white; 
+}
+
+
+/* Time Slot Selection Screen Styles */
+
+.TimeSlot {
+    grid-column: 1 ; 
+    background-color: #4ae29b;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: small;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 0px;
+}
+
+.Calendar {
+    grid-column: 1;
+    background-color: #b7c2fb;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 0px;
+}
+
+#Calendar {
+    width: 100px;
+    border-collapse: separate;
+    border-spacing: 5px;
+    table-layout: auto;
+    margin: 0px auto;
+}
+
+#Calendar th, #Calendar td {
+    padding: 4px;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: middle;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+#Calendar th {
+    background-color: #3e4a99;
+    color: white;
+}
+
+#Calendar td {
+    background-color: #f2f3f8;
+    color: black;
+}
+
+.SearchDate{
+    grid-column: 2;
+    background-color: #b7c2fb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top:0px;
+    width: auto;
+}
+
+/* Style for Search Date section */
+#search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+#search-form label {
+    font-weight: bold;
+    color: #000;
+}
+
+#search-form input, #search-form select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    width: 100%;
+    max-width: 200px;
+}
+
+#search-form button {
+    background-color: #00cc66;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: #4ae29b;
+}
+
+/* Search Songs Screen Styles */
+.SearchSongs {
+    grid-column: 1 ; 
+    background-color: #4ae29b;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: small;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 0px;
+}
+
+.Search{
+    grid-column: 1;
+    background-color: #b7c2fb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top:0px;
+    width: auto;
+}
+
+
+
+.genre-select {
+    width: 200px;
+    padding: 3px;
+    font-size: 12px;
+}
+
+.song-search {
+    margin-top: 0px;
+    width: 200px;
+    padding: 3px;
+    font-size: 12px;
+}
+.apply-filters-button {
+    background-color: #4ae29b; 
+    color: black; 
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-filters-button:hover {
+    background-color: #0c9756; 
+}
+.song-image-section {
+    
+    display: grid;
+    place-items: center; 
+    height: 100px; 
+}
+
+.song-image {
+    max-width: 100px;
+    max-height: 100px;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Styles for Current Playlist Screen */
+.CurrentPlaylist {
+    grid-column: 1 ; 
+    background-color: #4ae29b;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: small;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 0px;
+}
+
+.Playlist2{
+    grid-column: 1;
+    background-color: #b7c2fb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top:0px;
+    width: auto;
+}
+
+.PlaylistSummary{
+    grid-column: 2;
+    background-color: #b7c2fb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top:0px;
+    width: auto;
+}
+
+
+.playlist-summary-and-search {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+}
+
+
+.playlist-summary {
+    flex: 1;
+    padding: 20px;
+    background-color: #b7c2fb;
+    border-radius: 8px;
+}
+
+.playlist-summary h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.playlist-summary p {
+    margin: 5px 0;
+}
+
+.playlist-image {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+}
+
+
+.playlist-search-remove {
+    flex: 1;
+    padding: 20px;
+    background-color:  #b7c2fb;
+    border-radius: 8px;
+}
+
+.playlist-search-remove h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+.playlist-image-section {
+    
+    display: grid;
+    place-items: center; 
+    height: 100px; 
+}
+
+.playlist-image {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.remove-image-section {
+    
+    display: grid;
+    place-items: center; 
+    height: 100px; 
+}
+
+.remove-image {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/*Error message*/
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+.logout-btn {
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+

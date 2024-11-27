@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+
+<header>
+    <div class="logo">
+        <div class="circle"></div>
+        <h1>Yafri FM</h1>
+    </div>
+    <div class="role">DJ Role</div>
+    <button class="user-button"><%= user %></button>
+</header>
+
+        <div class="container">
+            <nav class="sidebar">
+                <button class="toggle-btn">☰</button> 
+                <ul id="barcontent">
+                    <li><a href="/maindj"><button class="nav-btn">Main Menu</button></a></li>
+                    <li><a href="/timeslot"><button class="nav-btnN">Select Timeslot</button></a></li>
+                    <li><a href="/searchsongs"><button class="nav-btn">Search Songs</button></a></li>
+                    <li><a href="/currentplaylist"><button class="nav-btn">Current Playlist</button></a></li>
+                    <li><button class="nav-btn">Previous Playlists</button></li>
+                 </ul>
+            </nav>
+            <main>
+                <section class="TimeSlot">
+                    <h2>Time Slot Selection</h2>
+                </section>
+
+                <section class="Calendar">
+                    <table id="Calendar">
+                        <thead>
+                            <tr>
+                                <th>Hours</th>
+                                <% days.forEach(day => { %>
+                                    <th><%= day %></th>
+                                <% }); %>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% times.forEach(time => { %>
+                                <tr>
+                                    <td><%= time %></td>
+                                    <% days.forEach(day => { %>
+                                        <td class="<%= schedule[day][time] === 'occupied' ? 'occupied' : 'selectable' %>">
+                                            <% if (schedule[day][time] === 'selectable') { %>
+                                                Select
+                                            <% } else { %>
+                                                Occupied
+                                            <% } %>
+                                        </td>
+                                    <% }); %>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="SearchDate">
+                    <div class="title">Look for a time slot:</div>
+                    <form id="search-form">
+                        <label for="day">Select Day:</label>
+                        <select id="day" name="day" required>
+                            <option value="" disabled selected>Select day</option>
+                            <% days.forEach(day => { %>
+                                <option value="<%= day %>"><%= day %></option>
+                            <% }); %>
+                        </select>
+                    
+                        <label for="time">Select Time:</label>
+                        <select id="time" name="time" required>
+                            <option value="" disabled selected>Select time</option>
+                            <% times.forEach(time => { %>
+                                <option value="<%= time %>"><%= time %></option>
+                            <% }); %>
+                        </select>
+                    
+                        <button type="submit">Search</button>
+                    </form>
+                </section>
+            </main>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+            </ul>
+        </footer>
+        <script src="/javascript/timeslot2.js"></script>
+    </body>
+</html>
